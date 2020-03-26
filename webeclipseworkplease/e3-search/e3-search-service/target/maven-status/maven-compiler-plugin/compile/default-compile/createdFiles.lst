@@ -1,0 +1,6 @@
+com\e3shop\serach\mapper\SearchItemMapper.class
+com\e3shop\serach\service\impl\ItemSearchServiceImpl.class
+com\e3shop\serach\service\impl\SearchServiceImpl.class
+com\e3shop\search\message\ItemListenerMessage.class
+com\e3shop\search\dao\SearchDaoImpl.class
+com\e3shop\search\message\Mytestmessage.class

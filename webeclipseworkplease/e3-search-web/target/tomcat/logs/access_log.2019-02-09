@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:18:49:53 +0800] "GET /search.html?keyword=huawei HTTP/1.1" 200 21300 http-bio-8084-exec-1 6168
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:18:49:56 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8084-exec-3 3
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:18:53:40 +0800] "GET /search.html?keyword=%E5%B0%8F%E7%B1%B3 HTTP/1.1" 200 21300 http-bio-8084-exec-5 232
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:18:53:49 +0800] "GET /search.html?keyword=%E9%A3%9E%E5%88%A9%E6%B5%A6 HTTP/1.1" 200 45074 http-bio-8084-exec-8 1219
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:20:47:14 +0800] "GET /search.html?keyword=%E9%A3%9E%E5%88%A9%E6%B5%A6 HTTP/1.1" 200 45074 http-bio-8084-exec-1 10696
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:20:47:23 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8084-exec-3 4
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:21:02:11 +0800] "GET /search.html?keyword=%E9%A3%9E%E5%88%A9%E6%B5%A6 HTTP/1.1" 200 45074 http-bio-8084-exec-5 722
+0:0:0:0:0:0:0:1 - - [09/Feb/2019:21:12:33 +0800] "GET /search.html?keyword=%E9%A3%9E%E5%88%A9%E6%B5%A6 HTTP/1.1" 200 45074 http-bio-8084-exec-7 1208

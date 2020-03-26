@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+	<context:property-placeholder location="classpath:conf/resource.properties"/>
+	<context:component-scan base-package="com.e3shop.controller" />
+	<!-- 映射静态资源 -->
+	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+	<!-- 配置三大组件 -->
+ 	<mvc:annotation-driven ></mvc:annotation-driven>
+ 	<!-- 视图解析器 -->
+ 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
+	<!-- 引用dubbo服务 -->
+	<dubbo:application name="e3-manager-web"/>
+	<!-- 注册地址 zookepper虚拟机所在地 -->
+	<dubbo:registry address="192.168.25.128:2181" protocol="zookeeper"></dubbo:registry>
+	<!--引用服务 -->
+ 	<dubbo:reference interface="com.e3shop.service.TbItemService" id="ibItemService"></dubbo:reference>
+ 	<dubbo:reference interface="com.e3shop.service.ItemCatService" id="itemCatService"></dubbo:reference>
+ 	<dubbo:reference interface="com.e3shop.content.service.ContentCategoryService" id="contentCategoryService"></dubbo:reference>
+ 	<dubbo:reference interface="com.e3shop.content.service.ContentService" id="contentService"></dubbo:reference>
+ 	<dubbo:reference interface="com.e3shop.serach.service.ItemSearchService" id="itemSearchService"></dubbo:reference>
+ </beans>
+	    
